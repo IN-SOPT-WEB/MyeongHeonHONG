@@ -4,22 +4,25 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+        <link
+            href="https://fonts.googleapis.com/icon?family=Material+Icons"
+            rel="stylesheet"
+        />
         <link rel="stylesheet" href="./style.css" />
         <title>홍맹구의 To Do List!</title>
     </head>
     <body>
         <!-- HEADER -->
         <header>
-            <h1>Todo List</h1>
+            <h1>📝 Todo List 📝</h1>
         </header>
 
         <!-- TOP NAV -->
         <nav>
             <div class="btn-group">
-                <button>오늘만 보기</button>
-                <button>내일만 보기</button>
-                <button>함께 보기</button>
+                <button class="btn">오늘만 보기</button>
+                <button class="btn">내일만 보기</button>
+                <button class="btn">함께 보기</button>
             </div>
         </nav>
 
@@ -27,28 +30,51 @@
             <!-- LEFT SECTION -->
             <section id="left-section">
                 <ul>
-                    오늘할일
-                    <li>1</li>
-                    <li>2</li>
+                    <h1 class="title">오늘 할일</h1>
+                    <div class="item">
+                        <li>1. 배고프니깐 점심 많이먹기</li>
+                        <span class="material-icons"> cancel </span>
+                    </div>
+
+                    <div class="item">
+                        <li>2. 모각공하기.</li>
+                        <span class="material-icons"> cancel </span>
+                    </div>
                 </ul>
 
                 <div class="add">
                     <input type="text" />
-                    <button>+</button>
+                    <button>
+                        <span class="material-icons"> add_circle_outline </span>
+                    </button>
                 </div>
             </section>
 
             <!-- RIGHT SECTION -->
             <section id="right-section">
                 <ul>
-                    내일 할일
-                    <li>1</li>
-                    <li>2</li>
+                    <h1 class="title">내일 할일</h1>
+                    <div class="item">
+                        <li>1. 알바가기</li>
+                        <span class="material-icons"> cancel </span>
+                    </div>
+
+                    <div class="item">
+                        <li>2. 열정있게 살기.</li>
+                        <span class="material-icons"> cancel </span>
+                    </div>
+
+                    <div class="item">
+                        <li>3. 금잔디조장한테 코드 칭찬받기</li>
+                        <span class="material-icons"> cancel </span>
+                    </div>
                 </ul>
 
                 <div class="add">
                     <input type="text" />
-                    <button>+</button>
+                    <button>
+                        <span class="material-icons"> add_circle_outline </span>
+                    </button>
                 </div>
             </section>
         </main>

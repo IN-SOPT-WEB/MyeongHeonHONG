@@ -1,0 +1,103 @@
+@charset "UTF-8";
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+ul,
+li {
+    list-style: none;
+}
+
+button {
+    border: none;
+}
+
+.btn {
+    border-radius: 10px;
+    background-color: #dea01e;
+    width: 100px;
+    height: 35px;
+    cursor: pointer;
+}
+
+/* HEADER */
+header {
+    height: 100px;
+    background-color: #3e87cb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* TOP NAV */
+
+nav {
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #7dbcff;
+}
+
+/* MAIN */
+
+main {
+    height: calc(100vh - 230px);
+    display: flex;
+    justify-content: space-around;
+    background-color: #e6f4f1;
+    flex: 1;
+}
+
+main section {
+    width: 400px;
+    height: 500px;
+    margin: 20px 0;
+    background-color: #dea01e;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+main section ul .title {
+    text-align: center;
+    margin-top: 10px;
+}
+
+main section ul .item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 10px;
+}
+
+main section .add {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+main section .add input {
+    width: 250px;
+    height: 30px;
+    border-radius: 10px;
+    border: solid;
+}
+
+main section .add button {
+    background-color: transparent;
+    cursor: pointer;
+}
+
+/* FOOTER */
+footer {
+    height: 50px;
+    background-color: #3e87cb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
