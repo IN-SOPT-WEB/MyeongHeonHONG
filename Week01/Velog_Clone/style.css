@@ -1,57 +1,71 @@
 @charset "UTF-8";
 
 * {
-  margin: 0px;
-  padding: 0px;
-  box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
 }
 
 ul,
 li {
-  list-style: none;
+    list-style: none;
 }
 
 .inner {
-  margin: 0 88px;
+    margin: 0 88px;
 }
 
 button {
-  border: none;
-  cursor: pointer;
-  background-color: transparent;
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
 }
 
 .btn {
-  width: 90px;
-  height: 35px;
-  border-radius: 15px;
-  background-color: black;
-  color: white;
-  font-size: large;
-  font-weight: 600;
+    width: 90px;
+    height: 35px;
+    border-radius: 15px;
+    background-color: black;
+    color: white;
+    font-size: large;
+    font-weight: 600;
 }
 
 /* HEADER */
 
 header {
-  height: 64px;
+    height: 64px;
 }
 
 header .inner {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 header .inner .logo a img {
-  height: 64px;
+    height: 64px;
 }
 
 header .inner .btn-group {
-  display: flex;
-  align-items: center;
+    display: flex;
+    align-items: center;
 }
 
-header .inner .btn-group button {
-  margin-left: 20px;
+header .inner .btn-group .icons {
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+}
+
+header .inner .btn-group .icons:hover {
+    background-color: #e5e5e5;
+}
+
+header .inner .btn-group .btn {
+    margin-left: 5px;
+}
+
+header .inner .btn-group .btn:hover {
+    background-color: #434343;
 }
