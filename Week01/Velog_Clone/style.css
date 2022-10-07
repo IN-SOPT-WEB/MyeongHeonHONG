@@ -11,8 +11,14 @@ li {
     list-style: none;
 }
 
+a {
+    text-decoration: none;
+    color: black;
+}
+
 .inner {
-    margin: 0 88px;
+    width: 1024px;
+    margin: 0 auto;
 }
 
 button {
@@ -31,6 +37,11 @@ button {
     font-weight: 600;
 }
 
+body {
+    background-color: #fafafa;
+    /* background-color: #e5e5e5; */
+}
+
 /* HEADER */
 
 header {
@@ -38,13 +49,15 @@ header {
 }
 
 header .inner {
+    height: 64px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-header .inner .logo a img {
-    height: 64px;
+header .inner .logo {
+    font-size: 25px;
+    font-family: 'Fira Mono', monospace;
 }
 
 header .inner .btn-group {
@@ -68,4 +81,138 @@ header .inner .btn-group .btn {
 
 header .inner .btn-group .btn:hover {
     background-color: #434343;
+}
+
+/* NAV */
+nav {
+    height: 100px;
+}
+
+nav .inner {
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav .inner div {
+    cursor: pointer;
+}
+
+nav .left-nav {
+    display: flex;
+    align-items: center;
+}
+
+nav .left-nav .item {
+    width: 110px;
+    height: 50px;
+    font-size: 18px;
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: aqua; */
+}
+
+nav .left-nav .item:first-child {
+    border-bottom: 2px solid;
+}
+
+nav .left-nav .item:nth-child(2) {
+    color: #c8c8c8;
+}
+
+nav .left-nav .item span {
+    margin-right: 10px;
+}
+
+nav .left-nav select {
+    width: 100px;
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+}
+
+/* main */
+main .inner {
+    display: flex;
+    justify-content: space-between;
+    flex-flow: wrap;
+}
+
+main .post {
+    width: 320px;
+    height: 377px;
+    box-shadow: 5px gray;
+    border-radius: 8px;
+    background-color: white;
+    margin-bottom: 50px;
+}
+
+main .post .post__img img {
+    width: 320px;
+    height: 150px;
+    border-radius: 8px 8px 0 0;
+    object-fit: cover;
+}
+
+main .post .post__contents {
+    height: 175px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px 15px;
+    color: c8c8c8;
+}
+
+main .post .post__contents .contents {
+    color: #c8c8c8;
+    font-size: 14px;
+}
+
+main .post .post__contents .contents .title {
+    color: black;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+main .post .post__contents .date {
+    font-size: 14px;
+    color: #868686;
+}
+
+main .post .post__host {
+    height: 52px;
+    border-top: 1px solid #c8c8c8;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 15px;
+}
+
+main .post .post__host .profile {
+    display: flex;
+    align-items: center;
+}
+
+main .post .post__host .profile .profile__img {
+    margin-right: 5px;
+}
+
+main .post .post__host .profile .profile__img img {
+    width: 24px;
+    height: 24px;
+}
+
+main .post .post__host .like {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+}
+
+main .post .post__host .like span {
+    font-size: 14px;
+    margin-right: 5px;
 }
