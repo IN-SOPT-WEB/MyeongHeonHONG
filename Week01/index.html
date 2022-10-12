@@ -1,71 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link
-            href="https://fonts.googleapis.com/icon?family=Material+Icons"
-            rel="stylesheet"
-        />
-        <link rel="stylesheet" href="./style.css" />
-        <script type="text/javascript" src="./main.js"></script>
-        <title>홍맹구의 To Do List!</title>
-    </head>
-    <body>
-        <!-- HEADER -->
-        <header>
-            <h1>📝 Todo List 📝</h1>
-        </header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <script src="./main.js" defer></script>
+    <title>홍맹구의 To Do List!</title>
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header>
+      <h1>📝 Todo List 📝</h1>
+    </header>
 
-        <!-- TOP NAV -->
+    <!-- TOP NAV -->
 
-        <nav>
-            <section class="btn-group">
-                <button class="btn">오늘만 보기</button>
-                <button class="btn">내일만 보기</button>
-                <button class="btn">함께 보기</button>
-            </section>
-        </nav>
+    <nav>
+      <section class="btn-group">
+        <button class="btn-nav today">오늘만 보기</button>
+        <button class="btn-nav tomorrow">내일만 보기</button>
+        <button class="btn-nav both">함께 보기</button>
+      </section>
+    </nav>
 
-        <main>
-            <!-- LEFT SECTION -->
-            <section id="left-section">
-                <h1 class="title">오늘 할일</h1>
-                <ul>
-                    <li>1. 배고프니깐 점심 많이먹기</li>
-                    <li>2. 모각공하기.</li>
-                </ul>
+    <main>
+      <!-- LEFT SECTION -->
+      <section id="left-section">
+        <h1 class="title">오늘 할일</h1>
+        <ul>
+          <li>1. 배고프니깐 점심 많이먹기</li>
+          <li>2. 모각공하기.</li>
+        </ul>
 
-                <div class="add">
-                    <input type="text" />
-                    <button>
-                        <span class="material-icons"> add_circle_outline </span>
-                    </button>
-                </div>
-            </section>
+        <div class="add">
+          <input type="text" />
+          <button>
+            <span class="material-icons"> add_circle_outline </span>
+          </button>
+        </div>
+      </section>
 
-            <!-- RIGHT SECTION -->
-            <section id="right-section">
-                <h1 class="title">내일 할일</h1>
-                <ul>
-                    <li>1. 알바가기</li>
-                    <li>2. 열정있게 살기.</li>
-                    <li>3. 금잔디조장한테 코드 칭찬받기</li>
-                </ul>
+      <!-- RIGHT SECTION -->
+      <section id="right-section">
+        <h1 class="title">내일 할일</h1>
+        <ul>
+          <li>1. 알바가기</li>
+          <li>2. 열정있게 살기.</li>
+          <li>3. 금잔디조장한테 코드 칭찬받기</li>
+        </ul>
 
-                <div class="add">
-                    <input type="text" />
-                    <button>
-                        <span class="material-icons"> add_circle_outline </span>
-                    </button>
-                </div>
-            </section>
-        </main>
+        <div class="add">
+          <input type="text" />
+          <button>
+            <span class="material-icons"> add_circle_outline </span>
+          </button>
+        </div>
+      </section>
+    </main>
 
-        <!-- FOOTER -->
-        <footer>
-            <p>Copyright © IN SOPT</p>
-        </footer>
-    </body>
+    <!-- FOOTER -->
+    <footer>
+      <p>Copyright © IN SOPT</p>
+    </footer>
+  </body>
 </html>
