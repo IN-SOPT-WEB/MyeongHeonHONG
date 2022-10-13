@@ -111,7 +111,6 @@ main section .add input {
 
 main section .add > button {
     background-color: transparent;
-    cursor: pointer;
 }
 
 /* FOOTER */
