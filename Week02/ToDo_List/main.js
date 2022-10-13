@@ -14,12 +14,6 @@ const tomorrowInput = $('#right-section .add input');
 
 const deleteIcons = $$('main section li');
 
-if (todayInput.value === '') {
-    console.log('empty');
-} else {
-    console.log('fill');
-}
-
 //할 일 추가 함수.
 function addList(time) {
     const li = document.createElement('li');
