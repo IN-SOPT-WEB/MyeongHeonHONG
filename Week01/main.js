@@ -1,26 +1,73 @@
 const $$ = (selector) => document.querySelectorAll(selector);
 const $ = (selector) => document.querySelector(selector);
 
-const todayView = $(".today");
-const tomorrowView = $(".tomorrow");
-const bothView = $(".both");
-
 const btn_group = $$(".btn-group button");
 
-console.log(btn_group[1]);
+const left_section = $("#left-section");
+const right_section = $("#right-section");
 
-function buttonByAttribute() {
-  //속성별로 다른 함수를 추가하는 함수.
+const todayList = $("#left-section ul");
+const tomorrowList = $("#right-section ul");
+
+const todayInput = $("#left-section .add input");
+const tomorrowInput = $("#right-section .add input");
+
+const deleteIcons = $$("main section li");
+
+//할 일 추가 함수.
+function addList(time) {
+  const li = document.createElement("li");
+  const textNode = document.createTextNode(todayInput.value);
+  li.appendChild(textNode);
+
+  if (time === "today") {
+    todayList.appendChild(li);
+  } else {
+    tomorrowList.appendChild(li);
+  }
 }
 
-function oneSideView(section) {
-  //한쪽만 보이게 하는 함수
+//속성별로 다른 함수를 추가하는 함수.
+function buttonByAttribute(element) {
+  switch (element.innerHTML) {
+    case "오늘만 보기":
+      return oneSideView("today", element);
+      break;
+    case "내일만 보기":
+      return oneSideView("tomorrow");
+      break;
+    case "함께 보기":
+      return bothSideView();
+  }
 }
 
-function removeSideView(section) {
-  //한쪽이 보일 때 반대편 섹션은 사라지게하는 함수.
+//한쪽만 보이게 하는 함수
+function oneSideView(attr, element) {
+  if (attr === "today") {
+    right_section.className = "hidden";
+    left_section.className = "";
+  } else {
+    right_section.className = "";
+    left_section.className = "hidden";
+  }
 }
 
-function bothSideView(section) {
-  //양쪽이 보이게하는 함수.
+//양쪽이 보이게하는 함수.
+function bothSideView() {
+  left_section.className = "";
+  right_section.className = "";
+}
+
+//반복문을 통해 navigation button에 이벤트 할당.
+for (let i = 0; i < btn_group.length; i++) {
+  btn_group[i].addEventListener("click", () => {
+    buttonByAttribute(btn_group[i]);
+  });
+}
+
+//반복문을 통해 delete아이콘에 이벤트 할당.
+for (let i = 0; i < deleteIcons.length; i++) {
+  deleteIcons[i].addEventListener("click", () => {
+    deleteIcons[i].remove();
+  });
 }

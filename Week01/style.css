@@ -23,6 +23,10 @@ button {
   cursor: pointer;
 }
 
+.hidden {
+  display: none;
+}
+
 /* HEADER */
 header {
   display: flex;
