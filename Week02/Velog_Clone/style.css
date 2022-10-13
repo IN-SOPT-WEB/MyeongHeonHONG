@@ -22,7 +22,6 @@ a {
 
 button {
     border: none;
-    cursor: pointer;
     background-color: transparent;
 }
 
@@ -93,6 +92,8 @@ nav div {
 nav .left-nav {
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    width: 350px;
 }
 
 nav .left-nav .item {
@@ -106,10 +107,11 @@ nav .left-nav .item {
 }
 
 nav .left-nav .item:first-child {
+    color: #000;
     border-bottom: 2px solid;
 }
 
-nav .left-nav .item:nth-child(2) {
+nav .left-nav .item {
     color: #c8c8c8;
 }
 
@@ -117,11 +119,24 @@ nav .left-nav .item span {
     margin-right: 10px;
 }
 
-nav .left-nav select {
-    width: 100px;
-    height: 30px;
-    border: none;
-    border-radius: 5px;
+nav .left-nav .drop-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 130px;
+    height: 35px;
+
+    border-radius: 2px;
+    background-color: #fff;
+}
+
+nav .left-nav .drop-box p {
+    margin-left: 10px;
+}
+
+nav .left-nav .drop-box:hover {
+    color: #848484;
+    font-weight: 600;
 }
 
 /* main */

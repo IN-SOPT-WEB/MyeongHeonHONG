@@ -16,17 +16,16 @@
         <!-- header -->
         <header class="inner">
             <a href="javascript:void(0)" class="logo">velog</a>
-
             <div class="btn-group">
-                <button class="icons">
+                <button class="icons" type="button">
                     <span class="material-icons"> sunny </span>
                 </button>
 
-                <button class="icons">
+                <button class="icons" type="button">
                     <span class="material-icons"> search </span>
                 </button>
 
-                <button class="btn">로그인</button>
+                <button class="btn" type="button">로그인</button>
             </div>
         </header>
 
@@ -40,12 +39,10 @@
                     <span class="material-icons"> schedule</span>최신
                 </div>
 
-                <select name="period">
-                    <option value="week">이번 주</option>
-                    <option value="today">오늘</option>
-                    <option value="month">이번 달</option>
-                    <option value="year">올해</option>
-                </select>
+                <div class="item drop-box" onclick="">
+                    <p>이번 달</p>
+                    <span class="material-icons"> expand_more </span>
+                </div>
             </div>
             <div class="right-nav">
                 <span class="material-icons"> more_vert </span>
