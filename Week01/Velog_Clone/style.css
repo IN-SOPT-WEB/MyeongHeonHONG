@@ -6,6 +6,10 @@
     box-sizing: border-box;
 }
 
+body {
+    background-color: #fafafa;
+}
+
 ul,
 li {
     list-style: none;
@@ -16,15 +20,15 @@ a {
     color: black;
 }
 
-.inner {
-    width: 1024px;
-    margin: 0 auto;
-}
-
 button {
     border: none;
     cursor: pointer;
     background-color: transparent;
+}
+
+.inner {
+    width: 1024px;
+    margin: 0 auto;
 }
 
 .btn {
@@ -37,65 +41,52 @@ button {
     font-weight: 600;
 }
 
-body {
-    background-color: #fafafa;
-    /* background-color: #e5e5e5; */
-}
-
 /* HEADER */
 
 header {
-    height: 64px;
-}
-
-header .inner {
     height: 64px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-header .inner .logo {
+header .logo {
     font-size: 25px;
     font-family: 'Fira Mono', monospace;
 }
 
-header .inner .btn-group {
+header .btn-group {
     display: flex;
     align-items: center;
 }
 
-header .inner .btn-group .icons {
+header .btn-group .icons {
     width: 40px;
     height: 40px;
     border-radius: 50px;
 }
 
-header .inner .btn-group .icons:hover {
+header .btn-group .icons:hover {
     background-color: #e5e5e5;
 }
 
-header .inner .btn-group .btn {
+header .btn-group .btn {
     margin-left: 5px;
 }
 
-header .inner .btn-group .btn:hover {
+header .btn-group .btn:hover {
     background-color: #434343;
 }
 
 /* NAV */
 nav {
     height: 100px;
-}
-
-nav .inner {
-    height: 100px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-nav .inner div {
+nav div {
     cursor: pointer;
 }
 
@@ -112,7 +103,6 @@ nav .left-nav .item {
     display: flex;
     justify-content: center;
     align-items: center;
-    /* background-color: aqua; */
 }
 
 nav .left-nav .item:first-child {
@@ -135,7 +125,7 @@ nav .left-nav select {
 }
 
 /* main */
-main .inner {
+main {
     display: flex;
     justify-content: space-between;
     flex-flow: wrap;
@@ -173,8 +163,6 @@ main .post .post__contents .contents {
 
 main .post .post__contents .contents .title {
     color: black;
-    font-size: 20px;
-    font-weight: 600;
     margin-bottom: 10px;
 }
 
