@@ -10,6 +10,7 @@
         />
 
         <link rel="stylesheet" href="./style.css" />
+        <script defer src="./main.js"></script>
         <title>Velog 클론코딩</title>
     </head>
     <body>
@@ -25,7 +26,13 @@
                     <span class="material-icons"> search </span>
                 </button>
 
-                <button class="btn" type="button">로그인</button>
+                <button class="btn" type="button">
+                    <a href="./pages/write.html">새 글 작성</a>
+                </button>
+
+                <button class="btn" type="button">
+                    <a href="#">로그인</a>
+                </button>
             </div>
         </header>
 
@@ -39,9 +46,18 @@
                     <span class="material-icons"> schedule</span>최신
                 </div>
 
-                <div class="item drop-box" onclick="">
-                    <p>이번 달</p>
-                    <span class="material-icons"> expand_more </span>
+                <div class="drop-group">
+                    <button class="drop-box" onclick="dropMenu()" type="button">
+                        <p>이번 달</p>
+                        <span class="material-icons"> expand_more </span>
+                    </button>
+
+                    <ul class="dropdown-content hidden" onclick="dropMenu()">
+                        <li onclick="setCurrentBoxName('이번 주')">이번 주</li>
+                        <li onclick="setCurrentBoxName('이번 달')">이번 달</li>
+                        <li onclick="setCurrentBoxName('이번 년')">이번 년</li>
+                        <li onclick="setCurrentBoxName('지난 해')">지난 해</li>
+                    </ul>
                 </div>
             </div>
             <div class="right-nav">
