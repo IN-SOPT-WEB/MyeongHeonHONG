@@ -26,11 +26,39 @@ button {
     cursor: pointer;
 }
 
+.tag-item {
+    width: 100px;
+    height: 30px;
+    color: #5118cb;
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: 700;
+    background-color: #c8c8c8;
+}
+
 body {
     padding: 10px 20px;
 }
 
-body input {
-    width: 100%;
-    background-color: orange;
+main #tag-input {
+    width: 20%;
+    height: 50px;
+    border: 1px solid gray;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+main #tag-input:focus {
+    outline: none;
+}
+
+main .tag-content {
+    display: flex;
+}
+
+main .tag-content .tag-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 10px 10px 0px;
 }
