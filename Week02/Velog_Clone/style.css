@@ -128,6 +128,8 @@ nav .left-nav .item span {
 }
 
 nav .left-nav .drop-group {
+    position: relative;
+    z-index: 1;
     display: flex;
     flex-direction: column;
 }
@@ -146,14 +148,17 @@ nav .left-nav .drop-group .drop-box {
 }
 
 nav .left-nav .drop-group .dropdown-content {
+    position: absolute;
+    z-index: 2;
+    top: calc(100% + 4px);
+    left: 0;
     width: 130px;
     height: 140px;
     border-radius: 8px;
-    margin-top: 5px;
+    margin-top: 8px;
     overflow: scroll;
     background-color: #fcfcfc;
     box-shadow: 0px 0px 10px 3px rgba(190, 190, 190, 0.6);
-    position: relative;
 }
 
 nav .left-nav .drop-group .dropdown-content li {
@@ -163,7 +168,6 @@ nav .left-nav .drop-group .dropdown-content li {
     width: 100%;
     height: 35px;
     color: #848484;
-    border-top: 1px solid gray;
 }
 
 nav .left-nav .drop-group .dropdown-content li:hover {
