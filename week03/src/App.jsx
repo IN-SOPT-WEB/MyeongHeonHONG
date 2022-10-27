@@ -1,22 +1,17 @@
 import Header from './components/Header';
-import styled from 'styled-components';
 import Nav from './components/Nav';
+import Main from './components/Main';
+import Footer from './components/Footer';
 
 function App() {
     return (
         <div className="App">
-            <Title>Hello</Title>
-            <Title>Hello</Title>
-            <Title>Hello</Title>
-            <Title>Hello</Title>
-            <Header data="헤더" />
-            <Nav />
+            <Header />
+            <Nav count="1" />
+            <Main/>
+            <Footer/>
         </div>
     );
 }
 
 export default App;
-
-const Title = styled.h1`
-    color: red;
-`;

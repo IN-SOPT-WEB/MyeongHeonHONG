@@ -1,8 +1,7 @@
-export default function Header(props) {
+export default function Header() {
     return (
         <div>
-            Header
-            <h1>{props.data}</h1>
+            <h1>당신 누군교~~!!</h1>
         </div>
     );
 }
