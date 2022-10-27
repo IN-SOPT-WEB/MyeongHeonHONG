@@ -1,7 +1,6 @@
 const $$ = (selector) => document.querySelectorAll(selector);
 const $ = (selector) => document.querySelector(selector);
 
-const body = $('body');
 const tagSection = $('.tag-content');
 let tagWordArray = [];
 const inputEnter = $('#tag-input');
@@ -28,8 +27,7 @@ function addNode(e) {
 
             tagNode.addEventListener('click', () => {
                 //태그클릭시 노드가 삭제되고 배열안에 값도 삭제되는 함수실행.
-                tagNode.remove();
-                removeArray(tagNode.innerText);
+                removeArray(tagNode);
             });
             //배열에 태그값 추가.
             addArray(tagInput.value);
@@ -51,8 +49,9 @@ const isDuplication = (word) => {
 //배열에 태그값 추가.
 const addArray = (word) => tagWordArray.push(word);
 //배열에 태그값 삭제.
-const removeArray = (word) => {
+const removeArray = (tagNode) => {
     tagWordArray = tagWordArray.filter(function (item) {
-        return item !== word;
+        return item !== tagNode.innerText;
     });
+    tagNode.remove();
 };
