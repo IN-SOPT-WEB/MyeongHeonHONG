@@ -1,12 +1,20 @@
 import styled from 'styled-components';
-import { useState } from 'react';
 
-const StyledMain = styled.main`
-    height: 500px;
+const StyledContent = styled.main`
+    height: 700px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+`;
+
+const StyledScore = styled.nav`
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 36px;
+    font-weight: 700;
 `;
 
 const ImageBox = styled.img`
@@ -46,11 +54,16 @@ const BtnWrap = styled.div`
     margin-top: 20px;
 `;
 
-export default function Main(props) {
+Content.defaultProps = {
+    point: '0',
+};
+
+export default function Content(props) {
     const { image, example, checkPerson, resetGame, index, length } = props;
 
     return (
-        <StyledMain>
+        <StyledContent>
+            <StyledScore>{props.point} 점</StyledScore>
             <ImageBox src={image}></ImageBox>
             {index !== length && (
                 <NameList>
@@ -74,6 +87,6 @@ export default function Main(props) {
             <BtnWrap>
                 <ResetBtn onClick={resetGame}>다시하기</ResetBtn>
             </BtnWrap>
-        </StyledMain>
+        </StyledContent>
     );
 }

@@ -1,6 +1,5 @@
 import Header from './components/Header';
-import Nav from './components/Nav';
-import Main from './components/Main';
+import Content from './components/Content';
 
 import styled from 'styled-components';
 import { useEffect, useState } from 'react';
@@ -16,13 +15,6 @@ const Container = styled.div`
     background-color: #ecc9c9;
 `;
 
-const people = [
-    ['공유', image1, ['홍명헌', '정현욱', '이주함', '공유', '김형겸']],
-    ['마동석', image2, ['박현지', '장명지', '이서영', '마동석', '윤지영']],
-    ['이수완', image3, ['이수완', '이수안', '서프라이즈 걔', '이수온', '이수']],
-    ['손석구', image4, ['김필', '홍명헌', '손석구', '발석구', '티벳여우']],
-];
-
 const Done = styled.div`
     display: flex;
     justify-content: center;
@@ -30,6 +22,13 @@ const Done = styled.div`
     font-size: 32px;
     font-weight: 700;
 `;
+
+const people = [
+    ['공유', image1, ['홍명헌', '정현욱', '이주함', '공유', '김형겸']],
+    ['마동석', image2, ['박현지', '장명지', '이서영', '마동석', '윤지영']],
+    ['이수완', image3, ['이수완', '이수안', '서프라이즈 걔', '이수온', '이수']],
+    ['손석구', image4, ['김필', '홍명헌', '손석구', '발석구', '티벳여우']],
+];
 
 export default function App() {
     const [index, setIndex] = useState(0);
@@ -70,10 +69,10 @@ export default function App() {
     return (
         <Container>
             <Header />
-            <Nav point={point} />
             {index === people.length && <Done>!끝!</Done>}
             {index < people.length && (
-                <Main
+                <Content
+                    point={point}
                     image={people[index][1]}
                     example={people[index][2]}
                     person={people[index][0]}
@@ -84,7 +83,8 @@ export default function App() {
                 />
             )}
             {index === people.length && (
-                <Main
+                <Content
+                    point={point}
                     image={image5}
                     example={people[index - 1][2]}
                     person={people[index - 1][0]}
