@@ -17,15 +17,15 @@ const deleteIcons = $$('main section li');
 //할 일 추가 함수.
 function addList(time) {
     const li = document.createElement('li');
-    const textNode = document.createTextNode(todayInput.value);
-    li.appendChild(textNode);
     li.addEventListener('click', () => {
         li.remove();
     });
 
     if (time === 'today') {
+        li.innerText = todayInput.value;
         todayList.appendChild(li);
     } else {
+        li.innerText = tomorrowInput.value;
         tomorrowList.appendChild(li);
     }
 }
@@ -61,16 +61,15 @@ function bothSideView() {
     right_section.className = '';
 }
 
-//반복문을 통해 navigation button에 이벤트 할당.
-for (let i = 0; i < btn_group.length; i++) {
-    btn_group[i].addEventListener('click', () => {
-        buttonByAttribute(btn_group[i]);
+//forEach를 이용한 이벤트 할당.
+btn_group.forEach((btn) => {
+    btn.addEventListener('click', () => {
+        buttonByAttribute(btn);
     });
-}
+});
 
-//반복문을 통해 delete아이콘에 이벤트 할당.
-for (let i = 0; i < deleteIcons.length; i++) {
-    deleteIcons[i].addEventListener('click', () => {
-        deleteIcons[i].remove();
+deleteIcons.forEach((icon) => {
+    icon.addEventListener('click', () => {
+        icon.remove();
     });
-}
+});
