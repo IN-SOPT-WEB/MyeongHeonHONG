@@ -1,16 +1,33 @@
 import React from 'react';
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import styled from 'styled-components';
-import UserList from './UserList';
 
-export default function index(props) {
-    const { bringUsername } = props;
+export default function Index(props) {
+    const { bringUsername, githubSearchList } = props;
+
+    const searchRef = useRef(null);
+    const [hidden, setHidden] = useState(true);
 
     const handleKeyPress = (e) => {
         if (e.key === 'Enter') {
             bringUsername(e.target.value);
+            setHidden(true);
         }
     };
+
+    const handleOnClick = (e) => {
+        setHidden(false);
+    };
+
+    const handleOutside = (e) => {
+        if (searchRef.current && !searchRef.current.contains(e.target)) {
+            setHidden(true);
+        }
+    };
+
+    useEffect(() => {
+        window.addEventListener('click', handleOutside);
+    }, [searchRef]);
 
     return (
         <FinderContainer>
@@ -19,7 +36,16 @@ export default function index(props) {
                 type="text"
                 placeholder="GitHub Username..."
                 onKeyPress={handleKeyPress}
+                onClick={handleOnClick}
+                ref={searchRef}
             ></Input>
+            {!hidden &&
+                githubSearchList.map((username) => (
+                    <SearchListWrap>
+                        <SearchUsername>{username}</SearchUsername>
+                        <div>X</div>
+                    </SearchListWrap>
+                ))}
         </FinderContainer>
     );
 }
@@ -48,4 +74,17 @@ const Input = styled.input`
     border-radius: 7px;
     border: none;
     text-indent: 15px;
+`;
+const SearchListWrap = styled.div`
+    display: flex;
+    justify-content: space-beteween;
+    align-items: center;
+    background-color: orange;
+`;
+
+const SearchUsername = styled.div`
+    width: 200px;
+    height: 30px;
+    justify-content: space-between;
+    align-items: center;
 `;
