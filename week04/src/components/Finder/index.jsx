@@ -1,11 +1,25 @@
 import React from 'react';
+import { useState } from 'react';
 import styled from 'styled-components';
+import UserList from './UserList';
 
-export default function index() {
+export default function index(props) {
+    const { bringUsername } = props;
+
+    const handleKeyPress = (e) => {
+        if (e.key === 'Enter') {
+            bringUsername(e.target.value);
+        }
+    };
+
     return (
         <FinderContainer>
             <Title>GitHub Profile Finder</Title>
-            <Input type="text" placeholder="GitHub Username..."></Input>
+            <Input
+                type="text"
+                placeholder="GitHub Username..."
+                onKeyPress={handleKeyPress}
+            ></Input>
         </FinderContainer>
     );
 }
