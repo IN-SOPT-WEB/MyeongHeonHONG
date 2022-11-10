@@ -3,7 +3,7 @@ import { useState, useRef, useEffect } from 'react';
 import styled from 'styled-components';
 
 export default function Index(props) {
-    const { bringUsername, githubSearchList } = props;
+    const { bringUsername, githubSearchList, deleteUsername } = props;
 
     const searchRef = useRef(null);
     const [hidden, setHidden] = useState(true);
@@ -25,6 +25,10 @@ export default function Index(props) {
         }
     };
 
+    const handleDeleteClick = (e) => {
+        deleteUsername(e.target.parentElement.firstChild.innerText);
+    };
+
     useEffect(() => {
         window.addEventListener('click', handleOutside);
     }, [searchRef]);
@@ -40,10 +44,19 @@ export default function Index(props) {
                 ref={searchRef}
             ></Input>
             {!hidden &&
-                githubSearchList.map((username) => (
-                    <SearchListWrap>
-                        <SearchUsername>{username}</SearchUsername>
-                        <div>X</div>
+                githubSearchList.map((username, index) => (
+                    <SearchListWrap key={index}>
+                        <Username>{username}</Username>
+                        <button
+                            type="button"
+                            style={{
+                                backgroundColor: 'blue',
+                                cursor: 'pointer',
+                            }}
+                            onClick={handleDeleteClick}
+                        >
+                            X
+                        </button>
                     </SearchListWrap>
                 ))}
         </FinderContainer>
@@ -82,7 +95,7 @@ const SearchListWrap = styled.div`
     background-color: orange;
 `;
 
-const SearchUsername = styled.div`
+const Username = styled.div`
     width: 200px;
     height: 30px;
     justify-content: space-between;

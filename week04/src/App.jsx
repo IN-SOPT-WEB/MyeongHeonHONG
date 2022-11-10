@@ -29,11 +29,21 @@ export default function App() {
             });
     };
 
+    const deleteUsername = (username) => {
+        setGithubSearchList((prev) =>
+            prev.filter((data) => {
+                return data !== username;
+            })
+        );
+    };
+
+    console.log(githubSearchList);
     return (
         <Container>
             <Finder
                 bringUsername={bringUsername}
                 githubSearchList={githubSearchList}
+                deleteUsername={deleteUsername}
             ></Finder>
             {openContent && <Content githubData={githubData}></Content>}
         </Container>
