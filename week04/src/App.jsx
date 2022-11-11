@@ -37,6 +37,10 @@ export default function App() {
         );
     };
 
+    const deleteContent = () => {
+        setOpenContent(false);
+    };
+
     console.log(githubSearchList);
     return (
         <Container>
@@ -45,7 +49,12 @@ export default function App() {
                 githubSearchList={githubSearchList}
                 deleteUsername={deleteUsername}
             ></Finder>
-            {openContent && <Content githubData={githubData}></Content>}
+            {openContent && (
+                <Content
+                    githubData={githubData}
+                    deleteContent={deleteContent}
+                ></Content>
+            )}
         </Container>
     );
 }

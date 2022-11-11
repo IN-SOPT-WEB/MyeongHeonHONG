@@ -3,9 +3,12 @@ import styled from 'styled-components';
 import image from '../../images/25231.png';
 
 export default function Index(props) {
-    const { githubData } = props;
+    const { githubData, deleteContent } = props;
     return (
         <ContentContainer>
+            <Button type="button" onClick={deleteContent}>
+                X
+            </Button>
             <UserImage src={githubData['avatar_url']} />
             <Title>{githubData['login']}</Title>
             <Title>{githubData['name']}</Title>
@@ -69,4 +72,15 @@ const LinkImage = styled.img`
     object-fit: fill;
     border-radius: 50px;
     margin-bottom: 20px;
+`;
+
+const Button = styled.button`
+    width: 45px;
+    height: 45px;
+    margin-top: 20px;
+    border-radius: 50px;
+    border: 1px solid #fff;
+    background-color: transparent;
+    color: #fff;
+    cursor: pointer;
 `;
