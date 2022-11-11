@@ -1,18 +1,28 @@
 import React from 'react';
 import { useState, useRef, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 
 export default function Index(props) {
     const { bringUsername, githubSearchList, deleteUsername } = props;
 
     const searchRef = useRef(null);
+    const navigate = useNavigate();
     const [hidden, setHidden] = useState(true);
 
     const handleKeyPress = (e) => {
         if (e.key === 'Enter') {
             bringUsername(e.target.value);
             setHidden(true);
+            navigate(`:${e.target.value}`);
         }
+    };
+
+    const handleHistoryClick = (e) => {
+        console.log(e.target.innerText);
+        bringUsername(e.target.innerText);
+        setHidden(true);
+        navigate(`:${e.target.innerText}`);
     };
 
     const handleOnClick = (e) => {
@@ -48,7 +58,9 @@ export default function Index(props) {
             {!hidden &&
                 githubSearchList.map((username, index) => (
                     <SearchListWrap key={index}>
-                        <Username>{username}</Username>
+                        <Username onClick={handleHistoryClick}>
+                            {username}
+                        </Username>
                         <Button type="button" onClick={handleDeleteClick}>
                             X
                         </Button>
@@ -85,6 +97,7 @@ const Input = styled.input`
     text-indent: 15px;
 `;
 const SearchListWrap = styled.ul`
+    z-index: 99;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -98,6 +111,7 @@ const Username = styled.li`
     align-items: center;
     height: 30px;
     margin-left: 15px;
+    cursor: pointer;
 `;
 
 const Button = styled.button`

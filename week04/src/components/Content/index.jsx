@@ -1,11 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
 import image from '../../images/25231.png';
+import { Outlet } from 'react-router-dom';
 
 export default function Index(props) {
     const { githubData, deleteContent } = props;
     return (
         <ContentContainer>
+            <Outlet />
             <Button type="button" onClick={deleteContent}>
                 X
             </Button>
