@@ -34,43 +34,39 @@ export default function Index(props) {
     }, [searchRef]);
 
     return (
-        <FinderContainer>
-            <Title>GitHub Profile Finder</Title>
-            <Input
-                type="text"
-                placeholder="GitHub Username..."
-                onKeyPress={handleKeyPress}
-                onClick={handleOnClick}
-                ref={searchRef}
-            ></Input>
+        <>
+            <FinderContainer>
+                <Title>GitHub Profile Finder</Title>
+                <Input
+                    type="text"
+                    placeholder="GitHub Username..."
+                    onKeyPress={handleKeyPress}
+                    onClick={handleOnClick}
+                    ref={searchRef}
+                ></Input>
+            </FinderContainer>
             {!hidden &&
                 githubSearchList.map((username, index) => (
                     <SearchListWrap key={index}>
                         <Username>{username}</Username>
-                        <button
-                            type="button"
-                            style={{
-                                backgroundColor: 'blue',
-                                cursor: 'pointer',
-                            }}
-                            onClick={handleDeleteClick}
-                        >
+                        <Button type="button" onClick={handleDeleteClick}>
                             X
-                        </button>
+                        </Button>
                     </SearchListWrap>
                 ))}
-        </FinderContainer>
+        </>
     );
 }
 
 const FinderContainer = styled.div`
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
     width: 550px;
     height: 100px;
-    margin: 40px;
+    margin: 40px 0;
     border-radius: 10px;
     background-color: #6e5494;
 `;
@@ -88,16 +84,22 @@ const Input = styled.input`
     border: none;
     text-indent: 15px;
 `;
-const SearchListWrap = styled.div`
+const SearchListWrap = styled.ul`
     display: flex;
-    justify-content: space-beteween;
-    align-items: center;
-    background-color: orange;
-`;
-
-const Username = styled.div`
-    width: 200px;
-    height: 30px;
     justify-content: space-between;
     align-items: center;
+    width: 204px;
+    background-color: #4078c0;
+    opacity: 0.7;
+`;
+
+const Username = styled.li`
+    display: flex;
+    align-items: center;
+    height: 30px;
+    margin-left: 15px;
+`;
+
+const Button = styled.button`
+    margin-right: 15px;
 `;

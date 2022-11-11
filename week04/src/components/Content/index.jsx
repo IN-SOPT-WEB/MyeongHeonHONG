@@ -1,17 +1,29 @@
 import React from 'react';
 import styled from 'styled-components';
+import image from '../../images/25231.png';
 
 export default function Index(props) {
     const { githubData } = props;
-    console.log(githubData);
     return (
         <ContentContainer>
-            <div>{githubData['followers']}</div>
-            <div>{githubData['following']}</div>
-            <a href={githubData['html_url']}>깃허브 주소방문</a>
-            <img src={githubData['avatar_url']} alt="" />
-            <div>{githubData['login']}</div>
-            <div>{githubData['name']}</div>
+            <UserImage src={githubData['avatar_url']} />
+            <Title>{githubData['login']}</Title>
+            <Title>{githubData['name']}</Title>
+            <FollowWrap>
+                <Title>
+                    Follower
+                    <div>{githubData['followers']}</div>
+                </Title>
+                <Title>
+                    Following
+                    <div>{githubData['following']}</div>
+                </Title>
+            </FollowWrap>
+            <Title>
+                <a href={githubData['html_url']}>
+                    <LinkImage src={image} alt="프로필방문로고" />
+                </a>
+            </Title>
         </ContentContainer>
     );
 }
@@ -25,4 +37,36 @@ const ContentContainer = styled.div`
     height: 400px;
     border-radius: 10px;
     background-color: #6e5494;
+`;
+
+const FollowWrap = styled.div`
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 300px;
+    height: 100px;
+`;
+
+const UserImage = styled.img`
+    width: 150px;
+    height: 150px;
+    margin-top: 20px;
+    border-radius: 8px;
+    object-fit: cover;
+`;
+
+const Title = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 20px;
+    color: #fff;
+`;
+
+const LinkImage = styled.img`
+    width: 50px;
+    height: 50px;
+    object-fit: fill;
+    border-radius: 50px;
+    margin-bottom: 20px;
 `;
